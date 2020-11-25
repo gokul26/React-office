@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./components/home.component";
+import Admin from "./components/admin.component";
+import Login from "./components/login.components";
+import Signup from "./components/signup.component";
+import HeaderComp from "./components/header.component";
+import FooterComp from "./components/footer.component";
+import PrivateRoute from './PrivateRoute';
+import {
+  Helmet
+} from 'react-helmet'
 
 function App() {
+    const TITLE = 'Team'
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Helmet>
+              <title>{ TITLE }</title>
+        </Helmet>
+        <Route path="/login" component={Login}/>
+        <Route path="/register" component={Signup}/>
+        <PrivateRoute exact path="/" component={Home}/>
+        <PrivateRoute exact path="/admin" component={Admin}/>
+      </div>
+    </Router>
   );
 }
 
