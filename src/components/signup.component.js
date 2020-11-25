@@ -52,7 +52,7 @@ function Signup(props) {
       <br />
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-4 offset-md-4 col-sm-6 offset-sm-3 col-8 offset-2 bg-light rounded">
+          <div className="col-md-4 offset-md-4 col-sm-6 offset-sm-3 col-8 offset-2 bg-light mb-5 rounded">
             <div className="card-body">
               <h5>Registeration</h5>
               <hr />
