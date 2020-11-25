@@ -6,12 +6,8 @@ import Home from "./components/home.component";
 import Admin from "./components/admin.component";
 import Login from "./components/login.components";
 import Signup from "./components/signup.component";
-import HeaderComp from "./components/header.component";
-import FooterComp from "./components/footer.component";
 import PrivateRoute from "./PrivateRoute";
 import { Helmet } from "react-helmet";
-import $ from "jquery";
-import Popper from "popper.js";
 
 function App() {
   const TITLE = "Team";
