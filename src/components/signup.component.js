@@ -48,7 +48,7 @@ function Signup(props) {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      <HeaderComp menuType="min" location="login" />
+      <HeaderComp menuType="min" location="register" />
       <br />
       <div className="container-fluid">
         <div className="row">
