@@ -21,13 +21,13 @@ function HeaderComp(props) {
                             </ul>
                             <ul className="navbar-nav">
                                 <li className="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                                    <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">Profile
                                         </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-333">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-333">
+                                        <a className="dropdown-item" href="#">Action</a>
+                                        <a className="dropdown-item" href="#">Another action</a>
+                                        <a className="dropdown-item" href="#">Something else here</a>
                                     </div>
                                 </li>
                             </ul>
@@ -41,7 +41,7 @@ function HeaderComp(props) {
     return (
             <div> 
                 <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-                    <a className="navbar-brand" href="#">Navbar</a>
+                    <a className="navbar-brand"  href="javascript:void(0)" >Navbar</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -67,16 +67,16 @@ function HeaderComp(props) {
                         <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                         </form>
                         <ul className="navbar-nav">
-                                <li className="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">Profile
-                                        </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-333">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">Profile
+                                    </a>
+                                <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-333">
+                                    <a className="dropdown-item" href="#">Action</a>
+                                    <a className="dropdown-item" href="#">Another action</a>
+                                    <a className="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </nav>

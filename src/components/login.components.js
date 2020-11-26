@@ -10,6 +10,7 @@ import Cookie from "js-cookie";
 import Swal from "sweetalert2";
 import PeaceMakerService from "../services/peaceMaker.service";
 import HeaderComp from "./header.component";
+import Home from "./home.component"
 
 function Login(props) {
   // console.log(props)
@@ -26,7 +27,8 @@ function Login(props) {
           console.log(response.data);
           const accessToken = response.data.token;
           Cookie.set("access", accessToken);
-          history.push("/");
+          history.push("/home");
+          return <Home/>
         } else {
           // setIsError(true)
           console.log(response.data);

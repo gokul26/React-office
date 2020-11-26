@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import "./App.css";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Home from "./components/home.component";
 import Admin from "./components/admin.component";
 import Login from "./components/login.components";
 import Signup from "./components/signup.component";
+import NotFound404 from "./components/not_found_404"
 import PrivateRoute from "./PrivateRoute";
 import { Helmet } from "react-helmet";
 
@@ -17,10 +16,14 @@ function App() {
         <Helmet>
           <title>{TITLE}</title>
         </Helmet>
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Signup} />
-        <PrivateRoute exact path="/" component={Home} />
-        <PrivateRoute exact path="/admin" component={Admin} />
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Signup} />
+          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/admin" component={Admin} />
+          <Route path="/404" component={NotFound404} />
+          <Redirect to="/404" />
+        </Switch>
       </div>
     </Router>
   );
