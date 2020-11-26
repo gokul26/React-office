@@ -28,7 +28,8 @@ function Login(props) {
           const accessToken = response.data.token;
           Cookie.set("access", accessToken);
           history.push("/home");
-          return <Home/>
+          localStorage.setItem("Token", accessToken);
+          // return <Home/>
         } else {
           // setIsError(true)
           console.log(response.data);

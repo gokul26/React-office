@@ -19,7 +19,7 @@ function App() {
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Signup} />
-          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/home" component={Home} />
           <PrivateRoute exact path="/admin" component={Admin} />
           <Route path="/404" component={NotFound404} />
           <Redirect to="/404" />
