@@ -28,7 +28,7 @@ function Login(props) {
           const accessToken = response.data.token;
           Cookie.set("access", accessToken);
           history.push("/home");
-          localStorage.setItem("Token", accessToken);
+          localStorage.setItem("Token", JSON.stringify({"token":accessToken}));
           // return <Home/>
         } else {
           // setIsError(true)
@@ -85,7 +85,9 @@ function Login(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("username.message", errors)}
+                      <small className="p-1">
+                        {_.get("username.message", errors)}
+                      </small>
                     </span>
                   )}
                   {_.get("username.type", errors) === "maxLength" && (
@@ -94,7 +96,9 @@ function Login(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("username.message", errors)}
+                      <small className="p-1">
+                        {_.get("username.message", errors)}
+                      </small>
                     </span>
                   )}
                   {_.get("username.type", errors) === "pattern" && (
@@ -103,7 +107,9 @@ function Login(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("username.message", errors)}
+                      <small className="p-1">
+                        {_.get("username.message", errors)}
+                      </small>
                     </span>
                   )}
                 </div>
@@ -113,9 +119,14 @@ function Login(props) {
                     name="password"
                     type="password"
                     className="form-control"
-                    ref={register({
+                    placeholder="Type your Password....."
+                    ref={
+                      register({
                       required: "Password is required",
-                    })}
+                      maxLength: "20",
+                      minLength: "5",
+                    })
+                  }
                   />
                   {_.get("password.type", errors) === "required" && (
                     <span className="text-danger">
@@ -123,7 +134,9 @@ function Login(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("password.message", errors)}
+                      <small className="p-1">
+                        {_.get("password.message", errors)}
+                      </small>
                     </span>
                   )}
                   {_.get("password.type", errors) === "maxLength" && (
@@ -132,7 +145,20 @@ function Login(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("password.message", errors)}
+                      <small className="p-1">
+                        Password exceeds the max length
+                      </small>
+                    </span>
+                  )}
+                  {_.get("password.type", errors) === "minLength" && (
+                    <span className="text-danger">
+                      <FontAwesomeIcon
+                        icon={faExclamationTriangle}
+                        size={"xs"}
+                      />
+                      <small className="p-1">
+                        Password is below required length
+                      </small>
                     </span>
                   )}
                 </div>

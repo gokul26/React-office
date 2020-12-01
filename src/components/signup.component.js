@@ -78,7 +78,9 @@ function Signup(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("email.message", errors)}
+                      <small className="p-1">
+                        {_.get("email.message", errors)}
+                      </small>
                     </span>
                   )}
                   {_.get("email.type", errors) === "maxLength" && (
@@ -87,7 +89,9 @@ function Signup(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("email.message", errors)}
+                      <small className="p-1">
+                        {_.get("email.message", errors)}
+                      </small>
                     </span>
                   )}
                   {_.get("email.type", errors) === "pattern" && (
@@ -96,7 +100,9 @@ function Signup(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("email.message", errors)}
+                      <small className="p-1">
+                        {_.get("email.message", errors)}
+                      </small>
                     </span>
                   )}
                 </div>
@@ -121,7 +127,9 @@ function Signup(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("name.message", errors)}
+                      <small className="p-1">
+                        {_.get("name.message", errors)}
+                      </small>
                     </span>
                   )}
                   {_.get("name.type", errors) === "maxLength" && (
@@ -130,7 +138,9 @@ function Signup(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("name.message", errors)}
+                      <small className="p-1">
+                        {_.get("name.message", errors)}
+                      </small>
                     </span>
                   )}
                 </div>
@@ -150,7 +160,9 @@ function Signup(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("password.message", errors)}
+                      <small className="p-1">
+                        {_.get("password.message", errors)}
+                      </small>
                     </span>
                   )}
                   {_.get("password.type", errors) === "maxLength" && (
@@ -159,7 +171,9 @@ function Signup(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("password.message", errors)}
+                      <small className="p-1">
+                        {_.get("password.message", errors)}
+                      </small>
                     </span>
                   )}
                 </div>
@@ -170,7 +184,7 @@ function Signup(props) {
                     type="password"
                     class="form-control"
                     ref={register({
-                      required: "Confirm Password field is required",
+                      required: "Confirm Password is required",
                       validate: (value) =>
                         value === watch("password") || "Passwords don't match.",
                     })}
@@ -181,7 +195,9 @@ function Signup(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("confirmpass.message", errors)}
+                      <small className="p-1">
+                        {_.get("confirmpass.message", errors)}
+                      </small>
                     </span>
                   )}
                   {_.get("confirmpass.type", errors) === "validate" && (
@@ -190,7 +206,9 @@ function Signup(props) {
                         icon={faExclamationTriangle}
                         size={"xs"}
                       />
-                      {_.get("confirmpass.message", errors)}
+                      <small className="p-1">
+                        {_.get("confirmpass.message", errors)}
+                      </small>
                     </span>
                   )}
                 </div>
